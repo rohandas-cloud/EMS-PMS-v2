@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">PMS VVDN</string>
+    <string name="date_range_format">%1$s - %2$s</string>
+    <string name="reason_format">Reason: %1$s</string>
+    <string name="days_count_format">%1$d Days</string>
+    <string name="date_label_format">Date: %1$s</string>
+    <string name="not_available">N/A</string>
+    <string name="not_checked_in">Not checked in</string>
+    <string name="not_checked_out">Not checked out</string>
+    <string name="select_date_range">Select Date Range</string>
+    <string name="full_day">Full Day</string>
+    <string name="half_day">Half Day</string>
+    <string name="select_leave_type">Select Leave Type</string>
+    <string name="fill_all_fields">Fill all fields</string>
+    <string name="emp_id_not_found">Employee ID not found.</string>
+    <string name="leave_type_remaining">%1$s (%2$d left)</string>
+    <string name="logout">Logout</string>
+    <string name="my_holidays">My Holidays</string>
+    <string name="all_location_holidays">All location Holidays</string>
+    <string name="my_location_holidays">My location Holidays</string>
+    <string name="employee_label">Employee : %1$s</string>
+    <string name="employee_id_label">Employee ID : %1$s</string>
+    <string name="payslip_title_format">%1$s %2$d Payslip</string>
+    <string name="open_payslip">Open Payslip</string>
+    <string name="currency_format">₹ %.2f</string>
+    <string name="last_payroll_label">Last Payroll : %1$s %2$s</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="brand_blue">#2051E5</color>
+    <color name="purple_primary">#2051E5</color>
+    <color name="purple_light">#EEF2FF</color>
+    <color name="present_green">#E8F5E9</color>
+    <color name="present_text">#4CAF50</color>
+    <color name="absent_red_bg">#FFEBEE</color>
+    <color name="absent_text">#F44336</color>
+    <color name="weekend_grey">#F5F5F5</color>
+    <color name="summary_present">#81C784</color>
+    <color name="summary_absent">#E57373</color>
+    <color name="calendar_day_bg">#FFFFFF</color>
+    <color name="calendar_day_border">#EEEEEE</color>
+</resources>

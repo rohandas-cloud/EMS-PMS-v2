@@ -1,0 +1,95 @@
+{
+    "checksum": "5df4d79ce9d43c2efde1ac9ad88d350afcec8c6443a9eed91807df3243d7b6d0",
+    "data": {
+    "id": "b22e7cf6-9c85-415d-bb9f-52cddbfbe736",
+    "createdAt": 1776756166056,
+    "updatedAt": 1776756172772,
+    "title": "Explain this: =          @GET(\"api/attendance/h...",
+    "messages": [
+        {
+            "id": "c5625fd2-873a-4d56-95a6-c885724013dd",
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "Explain this:"
+                },
+                {
+                    "type": "codeSnippet",
+                    "text": "=\n\n        @GET(\"api/attendance/history\")\n        suspend fun getAttendanceHistory(\n            @Header(\"Authorization\") token: String,\n            @Query(\"empId\") empId: String\n        ): Response<List<AttendanceResponse>>\n\n    @POST(\"api/attendance\")\n    suspend fun markAttendance(",
+                    "language": "kotlin"
+                },
+                {
+                    "type": "text",
+                    "text": "Function 'getAttendanceHistory' must have a body."
+                }
+            ],
+            "context": {
+                "currentFile": {
+                    "fsPath": "/home/vvdn/Desktop/Pms/AndroidStudioProjects/payroll_management_system/app/src/main/java/com/example/myapplication/data/api/ApiService.kt"
+                }
+            },
+            "createdAt": 1776756166181,
+            "isInternal": false,
+            "rawContent": {
+                "type": "doc",
+                "content": [
+                    {
+                        "type": "paragraph",
+                        "content": [
+                            {
+                                "type": "text",
+                                "text": "Explain this:"
+                            },
+                            {
+                                "type": "codeBlock",
+                                "attrs": {
+                                    "language": "kotlin"
+                                },
+                                "content": [
+                                    {
+                                        "type": "text",
+                                        "text": "=\n\n        @GET(\"api/attendance/history\")\n        suspend fun getAttendanceHistory(\n            @Header(\"Authorization\") token: String,\n            @Query(\"empId\") empId: String\n        ): Response<List<AttendanceResponse>>\n\n    @POST(\"api/attendance\")\n    suspend fun markAttendance("
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "text",
+                                "text": "Function 'getAttendanceHistory' must have a body."
+                            }
+                        ]
+                    }
+                ]
+            },
+            "autoAppliedRules": []
+        },
+        {
+            "id": "408ebbbf-21e2-412e-94b5-b82aa8ba5659",
+            "role": "system",
+            "content": [
+                {
+                    "type": "errorText",
+                    "text": "Something went wrong. Please try again later",
+                    "actions": [
+                        {
+                            "type": "externalAction",
+                            "title": "Regenerate",
+                            "action": "regenerateLastAnswer"
+                        }
+                    ]
+                }
+            ],
+            "createdAt": 1776756172772,
+            "isInternal": false
+        }
+    ],
+    "isAgent": false,
+    "isCustomAgent": false,
+    "isUnitTestsAgent": false,
+    "isE2EAgent": false,
+    "isWebDevAgent": false,
+    "isQnaAgent": true,
+    "model": "auto",
+    "lastUserMessageAt": 1776756166183
+}
+}

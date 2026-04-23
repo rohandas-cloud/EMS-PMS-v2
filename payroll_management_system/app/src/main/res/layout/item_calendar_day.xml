@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:id="@+id/llDayContainer"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/calendar_day_border_bg"
+        android:padding="2dp">
+
+        <TextView
+            android:id="@+id/tvDayNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDayName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wed"
+            android:textColor="#757575"
+            android:textSize="11sp" />
+
+        <!-- Inside the LinearLayout, below tvDayName -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">    <View
+            android:id="@+id/dotStatus"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/dot_present"
+            android:visibility="invisible" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvWorkingHours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="09:27 Hours"
+            android:textColor="#757575"
+            android:textSize="9sp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/ivWeekendIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/holiday"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvWeekendLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weekend Off"
+            android:textColor="#757575"
+            android:textSize="8sp"
+            android:visibility="gone" />
+
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

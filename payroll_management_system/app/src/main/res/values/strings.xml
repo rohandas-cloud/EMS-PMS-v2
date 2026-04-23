@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PMS VVDN</string>
+    <string name="date_range_format">%1$s - %2$s</string>
+    <string name="reason_format">Reason: %1$s</string>
+    <string name="days_count_format">%1$d Days</string>
+    <string name="date_label_format">Date: %1$s</string>
+    <string name="not_available">N/A</string>
+    <string name="not_checked_in">Not checked in</string>
+    <string name="not_checked_out">Not checked out</string>
+</resources>

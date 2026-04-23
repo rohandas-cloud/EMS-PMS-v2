@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ai.zencoder.plugin.chat.index">
+    <option name="activeChatId" value="b22e7cf6-9c85-415d-bb9f-52cddbfbe736" />
+    <option name="chatMetadata" value="{&quot;b22e7cf6-9c85-415d-bb9f-52cddbfbe736&quot;:{&quot;id&quot;:&quot;b22e7cf6-9c85-415d-bb9f-52cddbfbe736&quot;,&quot;title&quot;:&quot;Explain this: =          @GET(\&quot;api/attendance/h...&quot;,&quot;createdAt&quot;:1776756166056,&quot;updatedAt&quot;:1776756172772,&quot;messageCount&quot;:2,&quot;lastMessagePreview&quot;:&quot;Something went wrong. Please try again later&quot;,&quot;lastUserMessageAt&quot;:1776756166183}}" />
+  </component>
+</project>
