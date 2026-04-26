@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5FF">
+
+    <!-- Header Area -->
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvProfile"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp">
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_profile"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/cvProfile"
+            android:layout_marginStart="16dp"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello, Rohan"
+                android:textColor="#111827"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:letterSpacing="-0.03" />
+            <TextView
+                android:id="@+id/tvGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today 25 March"
+                android:textColor="#6B7280"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:letterSpacing="0.05" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/baseline_search_24"
+            app:tint="#111827" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="95dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rlHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp">
+
+            <!-- Main Salary Banner (3D Premium Feel) -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:cardCornerRadius="35dp"
+                app:cardElevation="10dp"
+                app:cardBackgroundColor="#C7C7FF">
+                
+                <RelativeLayout
+                    android:id="@+id/llSalaryInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="30dp">
+
+                    <TextView
+                        android:id="@+id/tvLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Daily\nEarnings"
+                        android:textColor="#1E1B4B"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="4dp"
+                        android:letterSpacing="-0.04" />
+                    
+                    <TextView
+                        android:id="@+id/tvMonthlySalaryAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvLabel"
+                        android:layout_marginTop="12dp"
+                        android:text="On your plan before 11:00 AM"
+                        android:textColor="#4F46E5"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <!-- Floating 3D Decoration -->
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="-20dp"
+                        android:src="@drawable/wallet"
+                        android:alpha="0.8"
+                        android:translationZ="50dp"
+                        android:scaleType="centerInside"
+                        app:tint="@color/white" />
+
+                    <ProgressBar
+                        android:id="@+id/pbSalary"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerInParent="true"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Weekly Calendar Selector -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="24dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <include layout="@layout/item_calendar_day_mock" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <include layout="@layout/item_calendar_day_mock" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <include layout="@layout/item_calendar_day_mock" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                
+                <!-- Selected Day (Black Pill) -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="48dp"
+                    android:layout_height="68dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#111827">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wed" android:textColor="#9CA3AF" android:textSize="10sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="25" android:textColor="@color/white" android:textSize="16sp" android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <include layout="@layout/item_calendar_day_mock" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <include layout="@layout/item_calendar_day_mock" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <include layout="@layout/item_calendar_day_mock" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Your plan"
+                android:textColor="#111827"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:letterSpacing="-0.03" />
+
+            <!-- Bento Grid (Premium 3D Feel) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:orientation="horizontal">
+
+                <!-- Vertical Card (Orange) -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvAttendance"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="35dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#FFB366">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="24dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Medium"
+                            android:textColor="#7C2D12"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textAllCaps="true"
+                            android:letterSpacing="0.05" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Attendance Group"
+                            android:textColor="#111827"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="-0.02" />
+                        <TextView
+                            android:id="@+id/tvInTimeSummary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="25 Nov\n14:00 - 15:30"
+                            android:textColor="#7C2D12"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        
+                        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1" />
+                        
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_profile"
+                            android:background="@drawable/calendar_day_border_bg" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <!-- Blue Card (Leaves) -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvLeave"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.2"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="35dp"
+                        app:cardElevation="4dp"
+                        app:cardBackgroundColor="#BAE6FD">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="24dp">
+                            <TextView
+                                android:id="@+id/tvLeaveLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Light"
+                                android:textColor="#0369A1"
+                                android:textSize="11sp"
+                                android:textStyle="bold"
+                                android:textAllCaps="true" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvLeaveLabel"
+                                android:layout_marginTop="12dp"
+                                android:text="Balance"
+                                android:textColor="#111827"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                            
+                            <!-- 3D Mock Sphere/Shape -->
+                            <ImageView
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginEnd="-20dp"
+                                android:layout_marginBottom="-20dp"
+                                android:src="@drawable/exit"
+                                android:alpha="0.2"
+                                app:tint="#0369A1" />
+
+                            <TextView
+                                android:id="@+id/tvLeaveBalanceSummary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:text="14 credits"
+                                android:textColor="#0369A1"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Pink Card (Holidays) -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvHolidays"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.8"
+                        android:layout_marginTop="10dp"
+                        app:cardCornerRadius="35dp"
+                        app:cardElevation="4dp"
+                        app:cardBackgroundColor="#FBCFE8">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:padding="16dp">
+                            <ImageView
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:src="@drawable/holidays"
+                                app:tint="#9D174D" />
+                            <TextView
+                                android:id="@+id/tvNextHolidayCard"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:text="Next Holi"
+                                android:textColor="#9D174D"
+                                android:textStyle="bold"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="40dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Dark Premium Pill Navbar -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="30dp"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="15dp"
+        app:cardBackgroundColor="#111827">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="12dp"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="#FFFFFF">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="14dp"
+                    android:src="@drawable/baseline_home_24"
+                    app:tint="#111827" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="22dp"
+                android:src="@drawable/payroll_icon"
+                app:tint="#6B7280" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="22dp"
+                android:src="@drawable/calender_icon"
+                app:tint="#6B7280" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="22dp"
+                android:src="@drawable/history"
+                app:tint="#6B7280" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Hidden compatibility views -->
+    <TextView android:id="@+id/tvOutTimeSummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tvWorkingHoursSummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tvLeaveRequestSummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tvNextHolidaySummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <View android:id="@+id/llSummaryContent" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <ProgressBar android:id="@+id/pbSummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tvLastPayrollDate" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <View android:id="@+id/cvPayslip" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

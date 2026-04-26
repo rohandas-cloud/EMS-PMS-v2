@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC">
+
+    <!-- Soft Glassmorphism Style Header -->
+    <View
+        android:id="@+id/headerBg"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:background="@drawable/rounded_bg"
+        android:backgroundTint="#EEF2FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llHeaderContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="24dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome back,"
+                android:textColor="#6366F1"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rohan Das"
+                android:textColor="#1E293B"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:letterSpacing="-0.02" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="2dp">
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_profile"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="90dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerBg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp">
+
+            <!-- Clean Floating Metrics -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#FFFFFF">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                        <TextView android:id="@+id/tvInTimeSummary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="09:15" android:textColor="#6366F1" android:textSize="18sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Entry" android:textColor="#94A3B8" android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="#FFFFFF">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                        <TextView android:id="@+id/tvWorkingHoursSummary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="08:45" android:textColor="#10B981" android:textSize="18sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Duration" android:textColor="#94A3B8" android:textSize="12sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!-- Premium White Salary Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
+                <LinearLayout android:id="@+id/llSalaryInfo" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SALARY ESTIMATE" android:textColor="#94A3B8" android:textSize="10sp" android:textStyle="bold" android:letterSpacing="0.1" />
+                    <TextView android:id="@+id/tvMonthlySalaryAmount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="₹ 45,000" android:textColor="#1E293B" android:textSize="32sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/tvLastPayrollDate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Paid: 01 March 2026" android:textColor="#CBD5E1" android:textSize="12sp" />
+                    <ProgressBar android:id="@+id/pbSalary" android:layout_width="30dp" android:layout_height="30dp" android:layout_gravity="center" android:visibility="gone" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Service Hub -->
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="16dp" android:text="Services Hub" android:textColor="#1E293B" android:textSize="18sp" android:textStyle="bold" />
+
+            <GridLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:columnCount="2" android:alignmentMode="alignMargins">
+                <androidx.cardview.widget.CardView android:id="@+id/cvPayslip" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp" app:cardCornerRadius="24dp" app:cardElevation="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:padding="20dp" android:background="#F1F5F9">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/payroll_icon" app:tint="#6366F1" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Payroll" android:textColor="#1E293B" android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:id="@+id/cvLeave" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_margin="8dp" app:cardCornerRadius="24dp" app:cardElevation="2dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:padding="20dp" android:background="#F1F5F9">
+                        <ImageView android:layout_width="36dp" android:layout_height="36dp" android:src="@drawable/exit" app:tint="#F43F5E" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="Leave" android:textColor="#1E293B" android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Cleanest Pill Nav -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="24dp"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="horizontal">
+            <ImageView android:layout_width="0dp" android:layout_height="22dp" android:layout_weight="1" android:src="@drawable/baseline_home_24" app:tint="#6366F1" />
+            <ImageView android:layout_width="0dp" android:layout_height="22dp" android:layout_weight="1" android:src="@drawable/payroll_icon" app:tint="#CBD5E1" />
+            <ImageView android:layout_width="0dp" android:layout_height="22dp" android:layout_weight="1" android:src="@drawable/calender_icon" app:tint="#CBD5E1" />
+            <ImageView android:layout_width="0dp" android:layout_height="22dp" android:layout_weight="1" android:src="@drawable/history" app:tint="#CBD5E1" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Hidden placeholders -->
+    <TextView android:id="@+id/tvLeaveBalanceSummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tvOutTimeSummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tvLeaveRequestSummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tvNextHolidayCard" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tvNextHolidaySummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <View android:id="@+id/llSummaryContent" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <ProgressBar android:id="@+id/pbSummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

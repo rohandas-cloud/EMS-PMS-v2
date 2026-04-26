@@ -37,6 +37,10 @@
             android:name=".view.SecondActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".view.ProDashboardActivity"
+            android:exported="false" />
+
         <!-- ================= ATTENDANCE / CALENDAR ================= -->
         <activity
             android:name=".view.Calender"

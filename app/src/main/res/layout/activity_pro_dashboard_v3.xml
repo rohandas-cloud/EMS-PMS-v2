@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFF">
+
+    <!-- Soft Pastel Gradient Header -->
+    <View
+        android:id="@+id/gradientHeader"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:background="@drawable/rounded_bg"
+        android:backgroundTint="#EEF2FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Morning,"
+            android:textColor="#757575"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvGreeting"
+            android:text="Rohan Das"
+            android:textColor="#2D3436"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="22.5dp"
+            app:cardElevation="2dp">
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_profile"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <!-- Premium Floating Summary Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvSummary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="-80dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="12dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/gradientHeader">
+
+        <LinearLayout
+            android:id="@+id/llSalaryInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Earnings Balance"
+                android:textColor="#A0A0A0"
+                android:textSize="12sp"
+                android:textAllCaps="true"
+                android:letterSpacing="0.1"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvMonthlySalaryAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹ 45,000"
+                android:textColor="@color/brand_blue"
+                android:textSize="36sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+                
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="IN TIME"
+                        android:textColor="#A0A0A0"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvInTimeSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="09:12 AM"
+                        android:textColor="#2D3436"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#F1F2F6" android:layout_marginHorizontal="16dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="REMAINING"
+                        android:textColor="#A0A0A0"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvLeaveBalanceSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="14 Leaves"
+                        android:textColor="#E17055"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/pbSalary"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvSummary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:text="Productivity Hub"
+                android:textColor="#2D3436"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:alignmentMode="alignMargins">
+
+                <!-- Payslip (Lucid Style) -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvPayslip"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#FFFFFF">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/wallet" app:tint="@color/brand_blue" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Payroll" android:textColor="#2D3436" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="History &amp; Details" android:textColor="#A0A0A0" android:textSize="10sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Attendance -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvAttendance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#FFFFFF">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/immigration" app:tint="#55EFC4" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Activity" android:textColor="#2D3436" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Clock records" android:textColor="#A0A0A0" android:textSize="10sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Leave -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvLeave"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#FFFFFF">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/exit" app:tint="#FF7675" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Time Off" android:textColor="#2D3436" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Requests &amp; Bal" android:textColor="#A0A0A0" android:textSize="10sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Holiday -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvHolidays"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#FFFFFF">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                        <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/holidays" app:tint="#FAB1A0" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="Holidays" android:textColor="#2D3436" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Event calendar" android:textColor="#A0A0A0" android:textSize="10sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Elegant Bottom Nav (Light) -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="32.5dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="horizontal" android:gravity="center">
+            <ImageView android:layout_width="0dp" android:layout_height="22dp" android:layout_weight="1" android:src="@drawable/baseline_home_24" app:tint="@color/brand_blue" />
+            <ImageView android:layout_width="0dp" android:layout_height="22dp" android:layout_weight="1" android:src="@drawable/payroll_icon" app:tint="#D1D5DB" />
+            <ImageView android:layout_width="0dp" android:layout_height="22dp" android:layout_weight="1" android:src="@drawable/calender_icon" app:tint="#D1D5DB" />
+            <ImageView android:layout_width="0dp" android:layout_height="22dp" android:layout_weight="1" android:src="@drawable/history" app:tint="#D1D5DB" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Hidden placeholders -->
+    <TextView android:id="@+id/tvLastPayrollDate" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tvOutTimeSummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tvWorkingHoursSummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tvLeaveRequestSummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tvNextHolidayCard" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tvNextHolidaySummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <View android:id="@+id/llSummaryContent" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <ProgressBar android:id="@+id/pbSummary" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
